@@ -86,7 +86,7 @@ public function showChangePasswordForm()
 }
 
 
-public function updatePassword(Request $request)
+public function changePassword(Request $request)
 {
     $user = Auth::user();
 
