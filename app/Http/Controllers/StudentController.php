@@ -42,7 +42,7 @@ class StudentController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:sinhviens',
             'phone' => [
                 'required',
                 'regex:/^[0-9]{10}$/',
@@ -50,13 +50,14 @@ class StudentController extends Controller
             ],
             'address' => 'required',
         ], [
-            'name.required' => 'Nhập tên sinh viên',
-            'email.required' => 'Nhập email',
-            'email.email' => 'Email không hợp lệ',
-            'phone.required' => 'Nhập sđt',
-            'phone.unique' => 'Số điện thoại đã tồn tại',
-            'phone.regex' => 'Số điện thoại không hợp lệ',
-            'address.required' => 'Nhập địa chỉ',
+            'name.required' => 'Please enter name',
+            'email.required' => 'Please enter email',
+            'email.email' => 'Invalid email',
+            'email.unique' => 'Email already exists',
+            'phone.required' => 'Please enter phone number',
+            'phone.unique' => 'Phone number already exists',
+            'phone.regex' => 'Invalid phone number',
+            'address.required' => 'Please enter address',
         ]);
 
         // Kiểm tra nếu validator không hợp lệ
@@ -103,7 +104,7 @@ class StudentController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:sinhviens,email,'.$id.',id',
             'phone' => [
                 'required',
                 'regex:/^[0-9]{10}$/',
@@ -111,13 +112,14 @@ class StudentController extends Controller
             ],
             'address' => 'required',
         ], [
-            'name.required' => 'Nhập tên sinh viên',
-            'email.required' => 'Nhập email',
-            'email.email' => 'Email không hợp lệ',
-            'phone.required' => 'Nhập sđt',
-            'phone.unique' => 'Số điện thoại đã tồn tại',
-            'phone.regex' => 'Số điện thoại không hợp lệ',
-            'address.required' => 'Nhập địa chỉ',
+            'name.required' => 'Please enter name',
+            'email.required' => 'Please enter email',
+            'email.email' => 'Invalid email',
+            'email.unique' => 'Email already exists',
+            'phone.required' => 'Please enter phone number',
+            'phone.unique' => 'Phone number already exists',
+            'phone.regex' => 'Invalid phone number',
+            'address.required' => 'Please enter address',
         ]);
 
         // Kiểm tra nếu validator không hợp lệ

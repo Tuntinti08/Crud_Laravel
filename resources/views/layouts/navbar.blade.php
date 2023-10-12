@@ -17,6 +17,6 @@
             </li>
         </ul>
       </div>
-      <a class="navbar-brand" href="/home">Home</a>
+      <a class="navbar-brand" href="/">Home</a>
     </div>
   </nav>

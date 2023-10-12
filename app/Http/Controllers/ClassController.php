@@ -32,8 +32,8 @@ class ClassController extends Controller
         $validated = $request->validate([
             "name" => "required|unique:lophocs,name",
         ], [
-            "name.required" => "Nhập tên lớp",
-            "name.unique" => "Tên lớp đã tồn tại",
+            "name.required" => "Please enter name",
+            "name.unique" => "Name already exists",
         ]);
 
         $data = $request->all();
@@ -68,8 +68,8 @@ class ClassController extends Controller
         $validated = $request->validate([
             "name" => "required|unique:lophocs,name,".$id,
         ], [
-            "name.required" => "Nhập tên lớp",
-            "name.unique" => "Tên lớp đã tồn tại",
+            "name.required" => "Please enter name",
+            "name.unique" => "Name already exists",
         ]);
 
         $data = $request->all();

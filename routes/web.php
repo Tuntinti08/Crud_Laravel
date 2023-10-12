@@ -17,13 +17,8 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
     return view('web');
 });
-
 
 
 Route::middleware(['auth'])->group(function () {

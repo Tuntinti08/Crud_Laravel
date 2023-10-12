@@ -32,8 +32,8 @@ class CourseController extends Controller
         $validated = $request->validate([
             "name" => "required|unique:khoahocs,name",
         ], [
-            "name.required" => "Nhập tên khóa học",
-            "name.unique" => "Tên khóa học đã tồn tại",
+            "name.required" => "Please enter name",
+            "name.unique" => "Name already exists",
         ]);
 
         $data = $request->all();
@@ -68,14 +68,14 @@ class CourseController extends Controller
         $validated = $request->validate([
             "name" => "required|unique:khoahocs,name,".$id,
         ], [
-            "name.required" => "Nhập tên khóa học",
-            "name.unique" => "Tên khóa học đã tồn tại",
+            "name.required" => "Please enter name",
+            "name.unique" => "Name already exists",
         ]);
 
         $data = $request->all();
         $course = Khoahoc::findOrFail($id);
         $course->update($data);
-        return redirect()->route('course.index')->with('success', 'Class updated successfully');
+        return redirect()->route('course.index')->with('success', 'Course updated successfully');
     }
 
     /**
@@ -85,7 +85,7 @@ class CourseController extends Controller
     {
         $course = Khoahoc::findOrFail($id);
         $course->delete();
-        return redirect()->route('course.index')->with('success', 'Class deleted successfully');
+        return redirect()->route('course.index')->with('success', 'Course deleted successfully');
     }
     public function search(Request $request)
     {
