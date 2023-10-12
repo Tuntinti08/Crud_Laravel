@@ -24,25 +24,38 @@
                     <div class="row">
                         <div class="col-12">
                             <label for="username">Username:</label>
-                            <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}" required>
+                            <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}" >
+                            @error('username')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         </div>
                         <div class="col-12">
                             <div>
                                 <label for="name">Name:</label>
-                                <input type="text"  class="form-control" name="name" id="name" value="{{ old('name') }}" required autofocus>
+                                <input type="text"  class="form-control" name="name" id="name" value="{{ old('name') }}"  >
+                                @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}"  id="email" required>
+                            <input type="text" class="form-control" name="email" value="{{ old('email') }}"  id="email" >
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-12 mt-3">
                             <label for="password">Password: </label>
-                            <input type="password" class="form-control" name="password" id="password" required>
+                            <input type="password" class="form-control" name="password" id="password" >
+                            @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-12 mt-3">
                             <label for="password_confirmation">Confirm Password: </label>
-                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" required>
+                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" >
+
                         </div>
                         <div class="text-center mt-3">
                             <button class="btn btn-primary" type="submit">Submit</button>

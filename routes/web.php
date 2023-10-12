@@ -38,6 +38,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/student', StudentController::class);
 
     Route::get('/students/search', [StudentController::class, 'search'])->name('student.search');
+
+    Route::get('change-password', [AuthController::class, 'showChangePasswordForm'])->name('changePassword');
+
+    Route::post('/change-password', [AuthController::class, 'updatePassword'])->name('password.update');
 });
 
 
@@ -50,3 +54,6 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('register', [AuthController::class, 'register']);
+
+
+

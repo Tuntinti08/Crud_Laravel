@@ -11,51 +11,48 @@
     </style>
 </head>
 <body>
+
     @if(session('error'))
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
 
-    @if(session('message'))
-        <div class="alert alert-primary">{{ session('message') }}</div>
-    @endif
 
-    @if(session('messlogout'))
-        <div class="alert alert-primary">{{ session('messlogout') }}</div>
-    @endif
-
-
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('password.update') }}">
         @csrf
         <div class="container">
             <div class="row ">
                 <div class="col-4"></div>
                 <div class="col-4">
                     <div class="khung mt-5 p-3">
-                        <h3 class="text-center text-uppercase text-success ">Login</h3>
+                        <h3 class="text-center text-uppercase text-success ">Change Password</h3>
                     <div class="row">
                         <div class="col-12">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" required>
+                            <label for="current_password">Old Password:</label>
+                            <input type="password" class="form-control" name="current_password" >
+                            @error('current_password')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-12 mt-3">
-                            <label for="password">Password: </label>
-                            <input type="password" class="form-control" name="password" id="password" required>
+                            <label for="password">New Password:</label>
+                            <input type="password" class="form-control" name="password" >
+                            @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="password_confirmation">Confirm Password:</label>
+                            <input type="password" class="form-control" name="password_confirmation" >
                         </div>
                         <div class="text-center mt-3">
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
-                        <a
-              href="/register"
-              class="text-center p-2"
-              style="text-decoration: none"
-              >Don't have an account? Sign up</a
-            >
-                    </div>
                     </div>
                 </div>
-                <div class="col-4"></div>
             </div>
+            <div class="col-4"></div>
         </div>
+    </div>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -12,8 +12,8 @@
             <div class="p-2">Crud Laravel</div>
             <div class="vr"></div>
             <div class="p-2">
-                @if (Session::has('user_name'))
-               Wellcome, {{ Session::get('user_name') }}
+                @if (Session::has('name'))
+               Wellcome, {{ Session::get('name') }}
             @endif
             </div>
             <div class="p-2 ms-auto">
@@ -23,6 +23,7 @@
             @else
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
+                    <a class="btn btn-info" href="{{ route('changePassword') }}">Change Password</a>
                     <button class="btn btn-danger" type="submit">Logout</button>
                 </form>
             @endguest
@@ -30,6 +31,10 @@
           </div>
         </div>
       </div>
+
+      @if(session('change'))
+        <div class="alert alert-success">{{ session('change') }}</div>
+    @endif
 
       <div class="p-4">
         <a class="btn btn-success " href="/student"> > CRUD 🙋🏻</a>
