@@ -7,7 +7,7 @@
        @csrf
         <div class="row">
         <div class=" col-4">
-            <input type="text" name="name" class="form-control" placeholder="Name" >
+            <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Name" >
             @error('name')
             <span class="text-danger"> {{$message}}</span>
             @enderror

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col">
                 <label for="">Name:</label>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Name">
                 @error('name')
                 <span class="text-danger"> {{$message}}</span>
                 @enderror
@@ -18,7 +18,7 @@
 
             <div class="col">
                 <label for="">Email:</label>
-                <input type="text" name="email" class="form-control" placeholder="Email">
+                <input type="text" name="email" value="{{old('email')}}" class="form-control" placeholder="Email">
                 @error('email')
                 <span class="text-danger"> {{$message}}</span>
                 @enderror
@@ -29,7 +29,7 @@
         <div class="row mt-3">
             <div class="col">
                 <label for="">Phone:</label>
-                <input type="text" name="phone" class="form-control" placeholder="Phone">
+                <input type="text" name="phone" value="{{old('phone')}}" class="form-control" placeholder="Phone">
                 @error('phone')
                 <span class="text-danger"> {{$message}}</span>
                 @enderror
@@ -38,7 +38,7 @@
 
             <div class="col">
                 <label for="">Address:</label>
-                <input type="text" name="address" class="form-control" placeholder="Address">
+                <input type="text" name="address" value="{{old('address')}}" class="form-control" placeholder="Address">
                 @error('address')
                 <span class="text-danger"> {{$message}}</span>
                 @enderror
