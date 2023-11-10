@@ -26,7 +26,7 @@ public function login(Request $request)
         // Đăng nhập thành công
         $user = Auth::user(); // Lấy thông tin người dùng đã đăng nhập
         Session::put('name', $user->name);
-        return redirect()->intended('/home');
+        return redirect()->intended('/');
     } else {
         // Đăng nhập không thành công
         return redirect()->route('login')->with('error', 'Email or password is incorrect!');
@@ -112,6 +112,6 @@ public function changePassword(Request $request)
     $user->password = Hash::make($request->password);
     $user->save();
 
-    return redirect()->intended('/home')->with('change', 'Change Password Success!');
+    return redirect()->intended('/')->with('change', 'Change Password Success!');
 }
 }

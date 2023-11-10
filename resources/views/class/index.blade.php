@@ -3,7 +3,7 @@
 @section('body')
     <div class="hstack gap-3">
         <div class="p-2">
-            <h1 class="mb-0">List Class</h1>
+            <h1 class="mb-0">Class</h1>
         </div>
         <div class="vr"></div>
         <div class="p-2 ">
