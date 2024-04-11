@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/classes/search', [ClassController::class, 'search'])->name('class.search');
 
+
     Route::resource('/course', CourseController::class);
 
     Route::get('/courses/search', [CourseController::class, 'search'])->name('course.search');
